@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 
 class crudOP extends Frame {
@@ -100,7 +101,7 @@ class crudOP extends Frame {
 				TextArea t2 = new TextArea();
 				t2.setBounds(200, 240, 500, 90);
 				Button b21 = new Button("EXECUTE");
-				b21.setBounds(800, 260, 70, 30);
+				b21.setBounds(750, 260, 70, 30);
 
 				f.add(t2);
 				f.add(b21);
@@ -116,12 +117,17 @@ class crudOP extends Frame {
 									"jdbc:postgresql://192.168.110.48:5432/plf_training?user=plf_training_admin&password=pff123");
 							PreparedStatement ps = con.prepareStatement(x);
 							ResultSet rs = ps.executeQuery();
+							ResultSetMetaData md = rs.getMetaData();
 							String y = "";
 							while (rs.next()) {
-								y += rs.getInt(1) + " " + rs.getString(2) + " " + rs.getDate(3) + " " + rs.getDouble(4)
-										+ "\n";
+								for (int i = 1; i < md.getColumnCount(); i++) {
+									y += rs.getString(i) + " ";
+								}
+								y += "\n";
 							}
-							t2.setText(y);
+							t2.setText("");
+							t2.setText(t2.getText() + y);
+
 							con.close();
 						} catch (Exception ex) {
 							System.out.println(ex);
@@ -132,13 +138,13 @@ class crudOP extends Frame {
 			}
 		});
 		Button b3 = new Button("UPDATE");
-		b3.setBounds(50, 350, 50, 30);
+		b3.setBounds(50, 360, 50, 30);
 		b3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TextArea t3 = new TextArea();
-				t3.setBounds(200, 330, 500, 90);
+				t3.setBounds(200, 340, 500, 90);
 				Button b31 = new Button("EXECUTE");
-				b31.setBounds(800, 360, 70, 30);
+				b31.setBounds(750, 360, 70, 30);
 
 				b31.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent ae) {
@@ -165,13 +171,13 @@ class crudOP extends Frame {
 			}
 		});
 		Button b4 = new Button("DELETE");
-		b4.setBounds(50, 450, 50, 30);
+		b4.setBounds(50, 460, 50, 30);
 		b4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TextArea t4 = new TextArea();
-				t4.setBounds(200, 430, 500, 90);
+				t4.setBounds(200, 440, 500, 90);
 				Button b41 = new Button("EXECUTE");
-				b41.setBounds(800, 460, 70, 30);
+				b41.setBounds(750, 460, 70, 30);
 
 				b41.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent ae) {
