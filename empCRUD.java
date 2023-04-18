@@ -223,26 +223,23 @@ class awtEMP extends Frame {
 			public void actionPerformed(ActionEvent ae) {
 				b4.setBackground(Color.pink);
 				b4.setBounds(750, 430, 80, 35);
-				String x = "insert into aks values(" + Integer.parseInt(t1.getText()) + ",'" + t2.getText() + "','"
-						+ t3.getText() + "'," + Integer.parseInt(t4.getText()) + "," + Integer.parseInt(t5.getText())
-						+ ")";
+				String x = "insert into aks values(?,?,?,?,?)";
 				try {
-					Class.forName("org.postgresql.Driver");
-				} catch (ClassNotFoundException e) {
+					sp = con.prepareStatement(x);
+					sp.setInt(1, Integer.parseInt(t1.getText()));
+					sp.setString(2, t2.getText());
+					sp.setString(3, t3.getText());
+					sp.setDouble(4, Double.parseDouble(t4.getText()));
+					sp.setInt(5, Integer.parseInt(t5.getText()));
+					sp.execute();
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				Connection conn;
-				try {
-					conn = DriverManager.getConnection(
-							"jdbc:postgresql://192.168.110.48:5432/plf_training?user=plf_training_admin&password=pff123");
-					Statement st;
-					st = conn.createStatement();
-					st.executeUpdate(x);
-				} catch (SQLException e2) {
-					// TODO Auto-generated catch block
-					e2.printStackTrace();
-				}
+
 			}
 		});
 
