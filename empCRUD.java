@@ -124,6 +124,7 @@ class awtEMP extends Frame {
 		b1.setBounds(450, 430, 70, 30);
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae1) {
+				voidColor();
 				try {
 					b1.setBackground(Color.pink);
 					b1.setBounds(450, 430, 80, 35);
@@ -156,6 +157,7 @@ class awtEMP extends Frame {
 		b2.setBounds(550, 430, 70, 30);
 		b2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b2.setBackground(Color.pink);
 				b2.setBounds(550, 430, 80, 35);
 				try {
@@ -189,6 +191,7 @@ class awtEMP extends Frame {
 		b3.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b3.setBackground(Color.pink);
 				b3.setBounds(650, 430, 80, 35);
 				try {
@@ -221,6 +224,7 @@ class awtEMP extends Frame {
 		b4.setBounds(750, 430, 70, 30);
 		b4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b4.setBackground(Color.pink);
 				b4.setBounds(750, 430, 80, 35);
 				String x = "insert into aks values(?,?,?,?,?)";
@@ -246,6 +250,7 @@ class awtEMP extends Frame {
 		b5.setBounds(850, 430, 70, 30);
 		b5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b5.setBackground(Color.pink);
 				b5.setBounds(850, 430, 80, 35);
 				try {
@@ -280,7 +285,9 @@ class awtEMP extends Frame {
 		b6.setBounds(450, 520, 70, 30);
 		b6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b6.setBackground(Color.pink);
+
 				b6.setBounds(450, 520, 80, 35);
 				String query = "delete from aks where empno=?and empname=? and job=? and salary=? and deptno=?";
 				try {
@@ -305,6 +312,7 @@ class awtEMP extends Frame {
 		b7.setBounds(550, 520, 70, 30);
 		b7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b7.setBackground(Color.pink);
 				b7.setBounds(550, 520, 80, 35);
 				try {
@@ -337,6 +345,7 @@ class awtEMP extends Frame {
 		b8.setBounds(650, 520, 70, 30);
 		b8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b8.setBackground(Color.pink);
 				b8.setBounds(650, 520, 80, 35);
 				String y = "";
@@ -363,6 +372,7 @@ class awtEMP extends Frame {
 		b9.setBounds(750, 520, 70, 30);
 		b9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b9.setBackground(Color.pink);
 				b9.reshape(750, 520, 80, 35);
 				t1.setText(null);
@@ -379,6 +389,7 @@ class awtEMP extends Frame {
 		b10.setBounds(850, 520, 70, 30);
 		b10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
+				voidColor();
 				b10.setBackground(Color.pink);
 				System.exit(0);
 
